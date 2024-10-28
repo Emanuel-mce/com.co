@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>¡Feliz Cumpleaños!</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            background-image: url('https://png.pngtree.com/thumb_back/fw800/background/20230930/pngtree-sunset-at-thomaquio-image_13360020.jpg'); /* Reemplaza esta URL con la de tu imagen */
+            background-position: center;
+            background-repeat: no-repeat;
+            color: #ee0fc9;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+            background-color: rgba(0, 0, 0, 0.6); /* Fondo semitransparente */
+            padding: 40px;
+            border-radius: 15px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            color: #ff6b81;
+        }
+
+        p {
+            font-size: 1.5rem;
+            margin: 20px 0;
+            color: #fff; /* Color blanco para el texto */
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 1rem;
+            background-color: #ff6b81;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #ff4757;
+        }
+
+        .corazones {
+            font-size: 2rem;
+            margin-top: 20px;
+        }
+
+        #decoracion {
+            animation: latido 1.5s infinite;
+        }
+
+        @keyframes latido {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.2);
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🎉 ¡Feliz Cumpleaños, amiga! 🎉</h1>
+        <p id="mensaje">Que este día esté lleno de amor y alegría 💖</p>
+        <button id="mostrarMensajes">Mostrar más mensajes</button>
+        <div id="decoracion" class="corazones">❤️💖💞💕💘💗💓💝</div>
+    </div>
+
+    <script>
+        const mensajes = [
+            "🎉 ¡Feliz Cumpleaños, amiga querida! 🎉",
+            "💖 Que tengas un día maravilloso lleno de sorpresas y alegrías 💖",
+            "🎂 ¡Que se cumplan todos tus deseos en este día especial! 🎂",
+            "🎁 Gracias por ser una amiga tan increíble, ¡te quiero mucho! 🎁",
+            "🎊 ¡Hoy celebramos a una persona muy especial como tú! 🎊"
+        ];
+
+        let indiceMensaje = 0;
+
+        document.getElementById('mostrarMensajes').addEventListener('click', function() {
+            const mensajeElemento = document.getElementById('mensaje');
+            indiceMensaje = (indiceMensaje + 1) % mensajes.length;
+            mensajeElemento.textContent = mensajes[indiceMensaje];
+        });
+    </script>
+</body>
+</html>
+
